@@ -17,6 +17,25 @@ class Game {
   }
 
   registerEvents() {
+  	let currentSymbol = this.currentSymbol;
+  	let currentSymbolText = currentSymbol.textContent;
+	document.addEventListener('keydown', function(event) {
+  		console.log(currentSymbol);
+  		let symbol = String.fromCharCode(event.keyCode);
+  		symbol = symbol.toLowerCase();
+  		console.log(symbol);
+  		console.log(currentSymbolText);
+  		currentSymbolText = currentSymbolText.toLowerCase();
+  	});
+  	if (symbol == currentSymbolText) {
+  		this.success();
+  		console.log(true);
+  	} else {
+  		this.success();
+  		console.log(false);
+  	}
+  
+  	
     /*
       TODO:
       Написать обработчик события, который откликается
